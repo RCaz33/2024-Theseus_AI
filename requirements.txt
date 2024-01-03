@@ -1,0 +1,3 @@
+fastapi==0.108.0 
+transformers==4.36.2
+uvicorn==uvicorn 0.25.0 
