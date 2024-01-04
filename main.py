@@ -1,8 +1,19 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from transformers import pipeline
+from fastapi.templating import Jinja2Templates
 
 # instancier l'application 
 app_remi = FastAPI()
+
+# charger le template de mise en page
+templates = Jinja2Templates(directory="templates")
+
+@app_remi.get("/")
+async def read_item(request: Request):      # , id: str
+    return templates.TemplateResponse(
+    request=request, name="acceuil.html", context={"id": id}
+)
+
 
 # charge le modèle entrainé
 reponse_pipeline = pipeline("models/model1")
