@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %} 
+
+    <div class="container">
+        <h1>Ici on parle de tout</h1>
+
+
+        <ul>
+        <p> 
+            {% for name in budget_cat %} 
+                {% if name == 'Other' %}
+                <li> {{name}} (mostly transport and tabac) </li>
+                {% elif name == 'Sorties' %}
+                <li> {{name}} (mostly clothes and extras) </li>
+                {% else %}
+                <li> {{name}}  </li>
+                {% endif %}
+            {% endfor %}
+
+        </p>
+        </ul>
+    </div>
+{% endblock %}
