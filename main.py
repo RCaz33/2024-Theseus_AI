@@ -42,7 +42,7 @@ def update(id):
             return 'problem updating the database'
         
     else:
-        return render_template('update.html',friend_to_update=friend_to_update)
+        return render_template('update.html',friend_to_update=friend_to_update, active_tab='update')
 
 
 
@@ -66,7 +66,7 @@ def friends():
     else:
         friends = Friends_codemy.query.order_by(Friends_codemy.date_created)
         print(f"\n\n{[f.name for f in friends]}\n\n")
-        return render_template('friends.html', title=title,friends=friends)
+        return render_template('friends.html', title=title,friends=friends, active_tab='friends')
 
 
 
@@ -80,7 +80,7 @@ def index():
 def about():
     title = 'Fixed budget'
     budget_cat = ['Fixed_charges', 'Food', 'Health', 'Other', 'Sorties', 'Renovation']
-    return render_template('about.html', budget_cat=budget_cat, title = title, user_='')
+    return render_template('about.html', budget_cat=budget_cat, title = title, user_='', active_tab='index')
 
 
 @app.route('/contact_form')
