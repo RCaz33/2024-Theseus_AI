@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %} 
+    <div class="container">
+        <div >
+            <h1> {{_error}} </h1>
+            <l> Must fill in all fields</l>
+
+        </br></br>
+        <form action="" method="POST">
+            <div class="mb-3">
+                <input type="text" class="form-control" 
+                placeholder="First Name", name="first_name"
+                value="{{first_name}}">
+            </div>
+            <br/>
+            <div class="mb-3">
+                <input type="text" class="form-control" 
+                placeholder="Last Name", name="last_name"
+                value="{{last_name}}">
+            </div>
+            <br/>
+            <div class="mb-3">
+                <input type="email" class="form-control" 
+                placeholder="Email Adress", name="email"
+                value="{{email}}">
+            </div>
+            <button type="submit" class="btn btn-secondary">Submit</button>
+        </form>
+    </div>
+    </div>
+{% endblock %}
